@@ -20,7 +20,7 @@ def troco_minimo(valor, denominacoes=None):
     
     Exemplo:
         >>> troco_minimo(289)
-        6
+        9
         >>> troco_minimo(11)
         2
     """
@@ -63,7 +63,7 @@ def atividades_compativeis(atividades):
         ...     ("A5", 6, 9)
         ... ]
         >>> atividades_compativeis(atividades)
-        3
+        2
     """
     if not atividades:
         return 0
