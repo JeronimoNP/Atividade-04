@@ -39,6 +39,15 @@ class TestTrocoMinimo(unittest.TestCase):
         denominacoes = [1, 5, 10]
         self.assertEqual(troco_minimo(15, denominacoes), 2)  # 10 + 5
         self.assertEqual(troco_minimo(27, denominacoes), 5)  # 10 + 10 + 5 + 1 + 1
+    
+    def test_valor_zero(self):
+        """Testa com valor zero"""
+        self.assertEqual(troco_minimo(0), 0)
+    
+    def test_valor_negativo(self):
+        """Testa que valor negativo gera erro"""
+        with self.assertRaises(ValueError):
+            troco_minimo(-1)
 
 
 class TestAtividadesCompativeis(unittest.TestCase):

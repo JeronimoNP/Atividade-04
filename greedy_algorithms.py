@@ -24,6 +24,12 @@ def troco_minimo(valor, denominacoes=None):
         >>> troco_minimo(11)
         2
     """
+    if valor < 0:
+        raise ValueError("O valor deve ser não-negativo")
+    
+    if valor == 0:
+        return 0
+    
     if denominacoes is None:
         denominacoes = [100, 50, 25, 10, 5, 1]
     
@@ -77,7 +83,7 @@ def atividades_compativeis(atividades):
     
     # Percorre as atividades restantes
     for i in range(1, len(atividades_ordenadas)):
-        nome, inicio, fim = atividades_ordenadas[i]
+        _, inicio, fim = atividades_ordenadas[i]
         
         # Se a atividade começa após o término da última atividade selecionada
         if inicio >= ultima_atividade_fim:
